@@ -8,12 +8,27 @@ spring:
   cloud:
     config:
       server:
-        git:  #git配置，公开仓库可以不填用户名和密码，私有仓库需要填写
+        git:  #git Public warehouse can not fill in the username and password, private warehouse needs to fill in
           uri: https://github.com/sdisk/spring-cloud-project
           search-paths: config-repo
           #username:
           #password:
       label: master
+    bus:
+      enabled: true  #open spring cloud bus
+      trace:
+        enabled: true
+  rabbitmq:
+    host: 127.0.0.1
+    port: 5672
+    username: guest
+    password: guest
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: bus-refresh
 
 
 

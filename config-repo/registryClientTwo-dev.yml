@@ -1,0 +1,4 @@
+client:
+  welcome:
+    word: You are the best!
+    value: 999
