@@ -1,0 +1,21 @@
+server:
+  port: 8761
+eureka:
+  instance:
+    prefer-ip-address: true
+    instance-id: ${spring.cloud.client.ip-address}:${server.port}
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    service-url:
+      defaultZone: http://@${eureka.instance.instance-id}/eureka/
+      #defaultZone: http://${spring.security.user.name}:${spring.security.user.password}@${eureka.instance.instance-id}/eureka/
+
+spring:
+  security:
+    user:
+      name: user
+      password: ${REGISTRY_SERVER_PASSWORD:123456}
+
+
+

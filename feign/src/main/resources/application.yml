@@ -1,0 +1,21 @@
+server:
+  port: 8765
+eureka:
+  client:
+    service-url:
+      defaultZone: http://user:${REGISTRY_SERVER_PASSWORD:123456}@localhost:8761/eureka/
+
+feign:
+  hystrix:
+    enabled: true #开启hystrix，默认关闭
+  compression:
+    request:
+      enabled: true
+      mime-types:
+        - text/xml
+        - application/json
+      min-request-size: 2048 #压缩的最小阈值，超过则进行压缩
+    response:
+      enabled: true
+
+

@@ -1,0 +1,24 @@
+server:
+  port: 8880
+eureka:
+  client:
+    service-url:
+      defaultZone: http://user:${REGISTRY_SERVER_PASSWORD:123456}@localhost:8761/eureka/
+spring:
+  cloud:
+    config:
+      server:
+        git:  #git配置，公开仓库可以不填用户名和密码，私有仓库需要填写
+          uri: https://github.com/sdisk/spring-cloud-project
+          search-paths: config-repo
+          #username:
+          #password:
+      label: master
+
+
+
+
+
+
+
+
