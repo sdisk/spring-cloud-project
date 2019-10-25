@@ -32,6 +32,6 @@ public class UserController {
 
     @RequestMapping("/welcome")
     public String welcome(@RequestParam(value = "name", defaultValue = "huang") String name){
-        return "hello user " + name + " ," + welComeWord + " ,repeat " + welComeValue + " times ,i am from port:" + port;
+        return "hello user " + name + " ," + welComeWord + " (repeat " + welComeValue + " times) ,i am from port:" + port;
     }
 }

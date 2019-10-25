@@ -1,24 +1,18 @@
 server:
-  port: 8763
+  port: 9411
 eureka:
   client:
     service-url:
       defaultZone: http://user:${REGISTRY_SERVER_PASSWORD:123456}@localhost:8761/eureka/
 spring:
-  cloud:
-    config:
-      fail-fast: true
-    bus:
-      trace:
-        enabled: true
   rabbitmq:
     host: 127.0.0.1
     port: 5672
     username: guest
     password: guest
 management:
-  endpoints:
+  metrics:
     web:
-      exposure:
-        include: bus-refresh
+      server:
+        auto-time-requests: false
 
