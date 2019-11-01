@@ -6,3 +6,4 @@ eureka:
       defaultZone: http://user:${REGISTRY_SERVER_PASSWORD:123456}@localhost:8761/eureka/
 
 
+

@@ -6,3 +6,7 @@ eureka:
 spring:
   rabbitmq:
     host: 127.0.0.1
+
+logging:
+  level:
+    com.netflix.discovery.shared.resolver.aws.ConfigClusterResolver: warn

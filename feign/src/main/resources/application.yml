@@ -18,4 +18,24 @@ feign:
     response:
       enabled: true
 
+#全局配置
+#ribbon:
+#  ConnectTimeout: 500
+#  ReadTimeout: 5000
+#指定服务配置
+registry-client:
+  ribbon:
+    #NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule
+    MaxAutoRetries: 1
+    MaxAutoRetriesNextServer: 1
+    ConnectTimeout: 500
+    ReadTimeOut: 2000
+    OkToRetryOnAllOperations: false
 
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 2001

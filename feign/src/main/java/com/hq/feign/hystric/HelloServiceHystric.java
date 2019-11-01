@@ -14,7 +14,13 @@ import org.springframework.stereotype.Component;
 public class HelloServiceHystric implements HelloService {
     @Override
     public String userHello(String name) {
-        log.info("userHello，进入熔断方法");
+        log.error("userHello，进入熔断方法");
+        return "hello user " + name + ", sorry, occur error!";
+    }
+
+    @Override
+    public String userHelloPost(String name) {
+        log.error("userHelloPost，进入熔断方法");
         return "hello user " + name + ", sorry, occur error!";
     }
 }

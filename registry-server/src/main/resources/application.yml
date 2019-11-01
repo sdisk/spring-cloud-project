@@ -8,8 +8,10 @@ eureka:
     register-with-eureka: false
     fetch-registry: false
     service-url:
-      defaultZone: http://@${eureka.instance.instance-id}/eureka/
-      #defaultZone: http://${spring.security.user.name}:${spring.security.user.password}@${eureka.instance.instance-id}/eureka/
+      #defaultZone: http://@${eureka.instance.instance-id}/eureka/
+      defaultZone: http://${spring.security.user.name}:${spring.security.user.password}@${eureka.instance.instance-id}/eureka/
+  server:
+    enable-self-preservation: false
 
 spring:
   security:

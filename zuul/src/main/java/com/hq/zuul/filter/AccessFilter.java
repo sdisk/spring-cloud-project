@@ -57,7 +57,7 @@ public class AccessFilter extends ZuulFilter {
         RequestContext ctx = RequestContext.getCurrentContext();
         HttpServletRequest request = ctx.getRequest();
 
-        log.info("%s >>> %s", request.getMethod(), request.getRequestURL().toString());
+        log.info("{} >>> {}", request.getMethod(), request.getRequestURL().toString());
         Object accessToken = request.getParameter("token");
         if (null == accessToken){
             log.error("token is empty!");

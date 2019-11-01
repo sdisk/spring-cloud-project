@@ -6,6 +6,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.Random;
+
 /**
  * @program: spring-cloud-project
  * @author: Mr.Huang
@@ -27,6 +29,14 @@ public class UserController {
 
     @RequestMapping("/hello")
     public String hello(@RequestParam(value = "name", defaultValue = "huang") String name){
+        System.out.println("---请求hello方法--");
+        int i = new Random().nextInt(3000);
+        System.out.println("客户端休眠时间:" + i);
+        try {
+            Thread.sleep(i);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         return "hello user " + name + " ,i am from port:" + port;
     }
 

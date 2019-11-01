@@ -1,0 +1,23 @@
+server:
+  port: 8767
+eureka:
+  client:
+    service-url:
+      defaultZone: http://user:${REGISTRY_SERVER_PASSWORD:123456}@localhost:8761/eureka/
+turbine:
+  aggregator:
+    cluster-config: default
+#  app-config: config
+  app-config: registry-client
+  cluster-name-expression: new String("default")
+  combine-host-port: true
+management:
+  endpoints:
+    web:
+      exposure:
+        include: hystrix.stream
+
+
+
+
+

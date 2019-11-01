@@ -12,3 +12,12 @@ spring:
       skip-pattern: "^org.*HystrixStreamTask$"
     sampler:
       probability: 1
+  cloud:
+    config:
+      uri: http://localhost:8880
+      fail-fast: true
+      retry:
+        initial-interval: 2000
+        max-interval: 10000
+        multiplier: 2
+        max-attempts: 10
