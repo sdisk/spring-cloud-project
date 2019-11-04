@@ -1,0 +1,28 @@
+server:
+  port: 8753
+eureka:
+  client:
+    service-url:
+      defaultZone: http://user:${REGISTRY_SERVER_PASSWORD:123456}@localhost:8761/eureka/
+spring:
+  cloud:
+    stream:
+      bindings:
+        input:
+          destination: stream-publish-exchange #stream-exchange-myOutput
+          binder: rabbit
+          group: consumer
+          consumer:
+            partitioned: true # open partition
+      instance-count: 2
+      instance-index: 0
+  rabbitmq:
+    addresses: 127.0.0.1
+    username: guest
+    password: guest
+
+
+
+
+
+
