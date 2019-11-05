@@ -23,6 +23,7 @@
         <module>stream-consumer-one</module>
         <module>stream-consumer-two</module>
         <module>model</module>
+        <module>gateway</module>
     </modules>
 
     <!-- G版本对应Boot 2.1.x -->
