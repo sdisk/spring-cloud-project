@@ -7,6 +7,7 @@ import org.springframework.cloud.gateway.route.RouteLocator;
 import org.springframework.cloud.gateway.route.builder.RouteLocatorBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.web.client.RestTemplate;
 
 /**
  * 在最前端，启动一个netty server接受请求，
@@ -79,5 +80,10 @@ public class BeanConfig {
     @Bean
     public UriKeyResolver uriKeyResolver(){
         return new UriKeyResolver();
+    }
+
+    @Bean
+    public RestTemplate restTemplate(){
+        return new RestTemplate();
     }
 }
