@@ -11,7 +11,8 @@ import org.springframework.web.client.RestTemplate;
 
 /**
  * @program: spring-cloud-project
- * @description:
+ * @description: 定时检测，可设置频率，通过isAlive()方法来判断实例的状态，从而把该服务剔除，
+ * 后续正常启动后重新加入，但是宕机到下次检测这段时间中，访问的时候还是可能报错
  * @author: Mr.Huang
  * @create: 2019-11-08 15:33
  **/
@@ -29,7 +30,7 @@ public class HealthMonitor implements IPing {
         try {
             ResponseEntity<String> responseEntity =  restTemplate.getForEntity(url, String.class);
             if (responseEntity.getStatusCode() == HttpStatus.OK){
-                log.debug("ping: url={}, success and response is {}", url, responseEntity.getBody());
+                log.info("ping: url={}, success and response is {}", url, responseEntity.getBody());
                 return true;
             }
             log.error("ping: url={}, failed and response is {}", url, responseEntity.getBody());

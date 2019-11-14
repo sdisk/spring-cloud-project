@@ -47,6 +47,10 @@ spring:
 logging:
   level:
     org.springframework.cloud.gateway: debug
+# 禁用 eureka,自己配置
+ribbon:
+  eureka:
+    enabled: false
 ping-balanced-service:
   ribbon:
     listOfServers: localhost:8762, localhost:8763
