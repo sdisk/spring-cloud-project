@@ -20,7 +20,9 @@ public class SendServiceImpl implements SendService {
 
     @Override
     public void sendMsg(String msg) {
-        mysource.myOutput()
-                .send(MessageBuilder.withPayload(msg).build());
+        for(int i=0;i<10;i++){
+            mysource.myOutput()
+                    .send(MessageBuilder.withPayload(msg).build());
+        }
     }
 }

@@ -21,7 +21,7 @@ public class StreamConsumerTwoApplication {
 
     @StreamListener(Sink.INPUT)
     public void sink(User user){
-        log.info("消费者one接收的数据: {}" , user.toString());
+        log.info("消费者two接收的数据: {}" , user.toString());
     }
 
 //    @StreamListener(Sink.INPUT)

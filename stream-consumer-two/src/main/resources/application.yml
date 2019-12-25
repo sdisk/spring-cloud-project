@@ -15,7 +15,7 @@ spring:
           consumer:
             partitioned: true # open partition
       instance-count: 2
-      instance-index: 0
+      instance-index: 1
   rabbitmq:
     addresses: 127.0.0.1
     username: guest

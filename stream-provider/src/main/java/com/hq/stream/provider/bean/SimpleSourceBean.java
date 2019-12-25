@@ -31,8 +31,9 @@ public class SimpleSourceBean {
         user.setId(1);
         user.setUsername(msg);
         user.setEmail("123456789@qq.com");
-
-        source.output()
-                .send(MessageBuilder.withPayload(user).build());
+        for(int i=0;i<10;i++){
+            source.output()
+                    .send(MessageBuilder.withPayload(user).build());
+        }
     }
 }
